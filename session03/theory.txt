@@ -1,0 +1,17 @@
+Promise.all is used to resolve multiple promises together, it takes an array of promises as an input and
+return an array as an output. The result will be generated when all the promises are resolved.
+Syntax: 
+Promise.all(iterable)
+
+
+Promise.all works differently when one or more than one promise fails to deliver. As soon as one of the promise
+will get reject it will throw error immedietly. It will not wait for other promises to resolve.
+In order to get the responses even after some of the promise get reject we will use Promise.allsettled().
+
+
+Promise.race(iterable) as soon as first promise is resolve this api will throw the result as a value be it resolve or reject.
+
+Promise.any(iterable) it waits for the first resolve (success) and then it will return the result of that success.
+If everything fails then the return will be aggregate error (combined errors of the errors)
+
+** promise is settled means resolve/reject or in other words it means the promise has got the results
