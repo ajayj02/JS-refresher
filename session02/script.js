@@ -11,11 +11,13 @@ const promise = createOrder(cart);
 promise.then(function (orderID) {
   console.log(orderID);
 })
-.catch(function(err) {
+.catch(function(err) {               //Handling errors
     console.log(err.message)
 });
 
-function createOrder(cart) {
+
+//promise creation
+function createOrder(cart) { 
   const pr = new Promise(function (resolve, reject) {
     if (!validateCart(cart)) {
       const error = new Error("cart is not valid");
