@@ -1,0 +1,13 @@
+async function always return a promise.
+from an async function we return either a promise or it will wrap the value returned inside the promise.
+
+let say we have declared a promise outside and we return it through an async function then it will not wrap
+it inside another promise it will return our promise P as it is from the async function.
+
+
+** Async await
+
+await can only be used inside async function.
+await makes the syntax more neat.
+
+
