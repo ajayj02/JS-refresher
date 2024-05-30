@@ -6,18 +6,27 @@ const cart = [
   "HDMI adaptor",
 ];
 
-const promise = createOrder(cart);
-
-promise.then(function (orderID) {
-  console.log(orderID);
-})
-.catch(function(err) {               //Handling errors
-    console.log(err.message)
-});
-
+createOrder(cart)
+  .then(function (orderID) {
+    console.log(orderID);
+    return orderID;
+  })
+  .catch(function (err) {
+    //Handling errors
+    console.log(err.message);
+  })
+  .then(function (data) {
+    return proceedtoPayment(data);
+  })
+  .then((paymentInfo) => {
+    console.log(paymentInfo);
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 
 //promise creation
-function createOrder(cart) { 
+function createOrder(cart) {
   const pr = new Promise(function (resolve, reject) {
     if (!validateCart(cart)) {
       const error = new Error("cart is not valid");
@@ -28,11 +37,17 @@ function createOrder(cart) {
     if (orderID) {
       setTimeout(function () {
         resolve(orderID);
-      }, 5000);
+      }, 1000);
     }
   });
 
   return pr;
+}
+
+function proceedtoPayment(orderID) {
+  return new Promise((resolve, reject) => {
+    resolve("Payment successful");
+  });
 }
 
 function validateCart(cart) {
