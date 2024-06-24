@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Call Bind Apply</title>
+    <title>Event Propagation</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Call Bind Apply</h1>
-    <input text="text" onkeyup="debouncedFn()" />
+    <h1>Event Propagation</h1>
+    <div>
+      DIV
+      <form>
+        FORM
+        <button>
+          Button
+        </button>
+      </form>
+    </div>
   </body>
   <script src="script.js" ></script>
 </html>

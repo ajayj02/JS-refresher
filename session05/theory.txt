@@ -1,0 +1,3 @@
+Throttling makes the function call after a certain interval of time.
+the throttle function take two arg the function that is to be called and
+returns a function.
