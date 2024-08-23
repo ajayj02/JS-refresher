@@ -1,3 +1,14 @@
-Throttling makes the function call after a certain interval of time.
-the throttle function take two arg the function that is to be called and
-returns a function.
+Event Propagation => it is propagation of events through the nested elements
+
+Event bubbling => if you have nested div, form, button and there is some event associated with all of them then when you trigger the innermost event it will move outwards and go like
+  button => form => div.
+
+Event Capturing/ trickling => It is reverse of event bubbling it executes events from top to bottom.
+to enable this pattern we need to just add {capture: true just after our callback function}
+
+In order to stop propagation just add e.stopPropagation() inside the callback function
+
+Event Delegation => 
+
+
+
