@@ -1,9 +1,17 @@
 enum Laptop {
-    Macbook(price: 2000), XPS(price: 1500), Lenovo(price: 1800), HP(price: 1200);
+    Macbook(2000), XPS(1500), Lenovo(), HP(1200);
 
     private int price;
 
     private Laptop(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -17,6 +25,9 @@ public class Hello {
     public static void main(String args[]) {
 
         Laptop L[] = Laptop.values();
+        for(Laptop item: L) {
+            System.out.println(item + " : " + item.getPrice());
+        }
 
     }
 }
